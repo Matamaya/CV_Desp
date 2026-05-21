@@ -1,53 +1,37 @@
 # CV DevOps Project
 
-Aplicación web tipo CV online desarrollada con React y PHP, desplegada mediante una arquitectura CI/CD moderna usando Jenkins, GitHub Actions, Cloudflare e ImageKit.
+## Descripción
+Esta aplicación es un Curriculum Vitae interactivo compuesto por un frontend en React y una API backend en PHP. El proyecto cuenta con una arquitectura de despliegue continuo (CI/CD) que permite actualizar la web en producción automáticamente con un simple `git push`, sirviendo el contenido de forma rápida y segura a nivel global.
 
-El proyecto separa frontend y backend:
+## Tech Stack
+* **Frontend:** React, Vercel
+* **Backend:** PHP, Apache
+* **CI/CD:** Jenkins (Dockerizado), GitHub Actions
+* **Red y Seguridad:** Cloudflare (CDN, HTTPS, Proxy inverso), ngrok
+* **Optimización Multimedia:** ImageKit
 
-- Frontend en React desplegado automáticamente en Vercel.
-- Backend PHP alojado en una Raspberry Pi con Apache.
-- Pipeline automatizado con Jenkins y GitHub Actions.
+## Requisitos previos
+Para replicar este entorno de desarrollo y producción se requiere:
+* Un servidor (ej. Raspberry Pi) con **Apache, PHP, Git y Docker** instalados.
+* Cuenta gratuita en **GitHub**, **Cloudflare** e **ImageKit**.
+* Un dominio propio para la configuración de DNS y proxy.
 
----
+## Pipeline CI/CD
+El sistema automatizado está dividido en dos infraestructuras según las necesidades del código:
 
-# Tech Stack
+* Backend (Jenkins): Se aloja de forma privada en el servidor local. Ante un git push a main, GitHub notifica a Jenkins vía Webhook. Jenkins extrae el código, valida la sintaxis y transfiere los archivos al servidor Apache de forma automática.
 
-## Frontend
+* Frontend (GitHub Actions): Gestionado íntegramente en la nube. Instala dependencias (npm ci), ejecuta los tests y sube la build de producción a Vercel sin necesidad de infraestructura propia.
 
-- React
-- JavaScript
-- HTML5
-- CSS3
-- Vercel
+## Instalación y despliegue
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/Matamaya/CV_Desp.git](https://github.com/Matamaya/CV_Desp.git)
+   cd CV_Desp
 
-## Backend
+## Autor
+* **Nombre:** Mateo Amaya
 
-- PHP
-- Apache2
-- Raspberry Pi
+* **GitHub:** @Matamaya
 
-## DevOps / Infraestructura
-
-- Jenkins
-- Docker
-- Docker Compose
-- GitHub Actions
-- Cloudflare CDN
-- ImageKit CDN
-- Git & GitHub
-
----
-
-# Arquitectura
-
-```text
-git push
-   │
-   ├── GitHub Actions ─────► Vercel (Frontend React)
-   │
-   └── Webhook ───────────► Jenkins (Docker)
-                                 │
-                                 └── Apache + PHP (Raspberry Pi)
-
-Cloudflare CDN ───────────► HTTPS + Caché + Protección DDoS
-```
+* **Email:** matamagra@campus.monlau.com
