@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+package.json
+package-lock.json
+vite.config.js
+.vite/
+dist/
+.babelrc
+.eslintrc.js
+.eslintignore
+.npmrc
+.prettierrc
+.prettierignore
+.vscode
