@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 $datosCV = [
     "nombre" => "Mateo Amaya",
     "profesion" => "Desarrollador Web ,Diseñador UI/UX & Administrador de Sistemas",
-    "foto_url" => "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80", // Foto de perfil de prueba de alta calidad (Unsplash)
+    "foto_url" => "https://ik.imagekit.io/qp4oruj2i/Captura%20de%20pantalla%202026-05-21%20185124.png", // Foto de perfil de prueba de alta calidad (Unsplash)
     "sobre_mi" => "Soy un Desarrollador web con pasión por construir aplicaciones altamente interactivas, limpias y eficientes. Especializado en el desarrollo frontend con React y ecosistemas backend con PHP y bases de datos relacionales.",
     "proyecto_ejemplo" => [
         "titulo" => "Aetheria Portal",
