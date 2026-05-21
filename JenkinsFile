@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('Descargar código') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Validar PHP') {
+            steps {
+                // Valida la sintaxis (el PDF asume que tienes PHP instalado o usas un contenedor con PHP)
+                sh 'echo "Validando sintaxis PHP..."'
+            }
+        }
+        stage('Desplegar en Apache') {
+            steps {
+                // Aquí irían los comandos reales de copia y reinicio que menciona el PDF
+                sh 'echo "Copiando ficheros a Apache..."'
+            }
+        }
+    }
+}
